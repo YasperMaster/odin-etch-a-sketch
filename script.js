@@ -1,15 +1,29 @@
 const container = document.querySelector("#container");
+const sizeBtn = document.querySelector("#sizeBtn");
+let gridSize = 16;
 
-for (let i = 0; i < 16; i++) {
-  for (let j = 0; j < 16; j++) {
+for (let i = 0; i < gridSize; i++) {
+  for (let j = 0; j < gridSize; j++) {
     const square = document.createElement("div");
     square.classList.add("square");
     container.appendChild(square);
+    square.addEventListener("mouseover", (event) => {
+      square.classList.add("coloredSquare");
+    });
   }
 }
 
-square.addEventListener("mouseover", (event) => {
-  const colorSqr = document.createElement("div");
-  colorSqr.classList.add("coloredSquare");
-  container.appendChild(colorSqr);
+/*
+size button function not working yet
+
+sizeBtn.addEventListener("click", (event) => {
+  gridSize = prompt("Enter the size of the grid:\n(100x100 is the max)");
+  if (gridSize != null || gridSize != "") {
+    for (let i = 0; i < gridSize; i++) {
+      for (let j = 0; j < gridSize; j++) {
+        container.removeChild(square);
+      }
+    }
+  }
 });
+*/
